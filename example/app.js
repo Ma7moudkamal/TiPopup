@@ -18,5 +18,5 @@ var popup = TiPopup.createView();
 win.add(popup);
 
 win.addEventListener('click', function() {
-	popup.showMenu();
+	// popup.showMenu();
 });

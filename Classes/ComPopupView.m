@@ -6,25 +6,37 @@
  */
 
 #import "ComPopupView.h"
+#import "TiUtils.h"
+#import "TiApp.h"
+#import "ComPopupViewController.h"
 
 @implementation ComPopupView
 
--(UIView*)square
-{
-    if (square==nil)
-    {
-        square = [[UIView alloc] initWithFrame:[self frame]];
-        [self addSubview:square];
-        
-    }
-    return square;
+// Add native view to titanium
+-(void)dealloc {
+    RELEASE_TO_NIL(view);
+    [super dealloc];
 }
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        NSLog(@"Init called",self);
+        ComPopupViewController * controller = [[ComPopupViewController alloc] init];
+        [self addSubview:controller.view];
+    }
+    return self;
+}
+
+
+-(void)frameSizeChanged:(CGRect)frame bounds:(CGRect)bounds {
+}
+
 
 -(id)showMenu:(id)args
 {
-    //[self becomeFirstResponder];
-    NSLog(@"showMenu activated");
-    
+    NSLog(@"showMenu called");
 }
+
 
 @end
