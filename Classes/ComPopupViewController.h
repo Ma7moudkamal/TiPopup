@@ -11,9 +11,7 @@
 
 @interface ComPopupViewController : UIViewController
 
--(void)fish;
--(void)stripes;
--(void)grass;
+-(void)customMenu;
 
 -(void)showController;
 
